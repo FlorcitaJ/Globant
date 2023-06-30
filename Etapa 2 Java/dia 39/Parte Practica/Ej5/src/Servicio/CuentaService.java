@@ -15,10 +15,6 @@ package Servicio;
 import Entidad.Cuenta;
 import java.util.Scanner;
 
-/**
- *
- * @author flopy
- */
 public class CuentaService {
     Scanner leer=new Scanner(System.in);
     public Cuenta crearCuenta(){
@@ -31,39 +27,45 @@ public class CuentaService {
         c.setSaldoActual(leer.nextInt());
         return c;
     }
-    public double ingresar(int saldoActual){
+    public double ingresar(Cuenta c){
+        int saldoActual=c.getSaldoActual();
         System.out.println("¿Cuánto dinero desea ingresar?");
         double ingreso=leer.nextDouble();
         saldoActual+=ingreso;
+        c.setSaldoActual(saldoActual);
         return saldoActual;
     }
-    public double retirar(int saldoActual){
+    public double retirar(Cuenta c){
+        int saldoActual=c.getSaldoActual();
         System.out.println("Ingrese el monto a retirar");
         double retiro=leer.nextDouble();
         if(retiro>saldoActual){
-            System.out.println("El monto ingresado supera la cantidad disponible, se le hará entrega de $"+(retiro-saldoActual));
+            System.out.println("El monto ingresado supera la cantidad disponible, se le hará entrega de $"+saldoActual);
             saldoActual=0;
         }else {
             saldoActual-=retiro;
         }
+        c.setSaldoActual(saldoActual);
         return saldoActual;
     }
-    public double extraccionRapida(int saldoActual){
+    public double extraccionRapida(Cuenta c){
+        int saldoActual=c.getSaldoActual();
         double monto=saldoActual*20/100;
         System.out.println("Ingrese el monto que desea retirar");
         double retiro=leer.nextDouble();
         while (retiro>monto) {            
-            System.out.println("El monto ingresado es mayor a lo permitido en la extraccion rápida. Ingrese un nuevo monto");
+            System.out.println("El monto ingresado es mayor a lo permitido en la extraccion rápida. Ingrese un nuevo monto, monto máximo permitido :$"+monto);
             retiro=leer.nextDouble();
         }
         saldoActual-=retiro;
+        c.setSaldoActual(saldoActual);
         return saldoActual;
         }
-    public void consultarSaldo(int saldoActual){
-        System.out.println("Su saldo actual es de $"+saldoActual);
+    public void consultarSaldo(Cuenta c){
+        System.out.println("Su saldo disponible es de $"+c.getSaldoActual());
     }
-    public void consultrDatos(){
-        System.out.println(c.ToString());
+    public void consultrDatos(Cuenta c){
+        System.out.println(c.toString());
     }
 }
     

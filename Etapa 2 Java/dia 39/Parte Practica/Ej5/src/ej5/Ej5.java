@@ -17,17 +17,20 @@ h) Método consultarDatos(): permitirá mostrar todos los datos de la cuenta
  */
 package ej5;
 
-/**
- *
- * @author flopy
- */
+import Entidad.Cuenta;
+import Servicio.CuentaService;
+
+
 public class Ej5 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        CuentaService cs=new CuentaService();
+        Cuenta c=cs.crearCuenta();
+        cs.ingresar(c);
+        cs.extraccionRapida(c);
+        cs.consultarSaldo(c);
+        cs.ingresar(c);
+        cs.consultrDatos(c);
     }
     
 }

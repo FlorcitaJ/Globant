@@ -18,21 +18,42 @@ cuanto quedó la taza.
  Método agregarCafe(int): se le pide al usuario una cantidad de café, el método lo
 recibe y se añade a la cafetera la cantidad de café indicada.
  */
-package ej6;
+package Entidad;
 
-import Servicio.CafeteraService;
+public class Cafetera {
+    private int capacidadMaxima;
+    private int cantidadActual;
 
+    public Cafetera() {
+    }
 
-public class Ej6 {
+    public Cafetera(int capacidadMaxima, int cantidadActual) {
+        this.capacidadMaxima = capacidadMaxima;
+        this.cantidadActual = cantidadActual;
+    }
+
+    public int getCapacidadMaxima() {
+        return capacidadMaxima;
+    }
+
+    public void setCapacidadMaxima(int capacidadMaxima) {
+        this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public int getCantidadActual() {
+        return cantidadActual;
+    }
+
+    public void setCantidadActual(int cantidadActual) {
+        this.cantidadActual = cantidadActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Cafetera{" + "capacidadMaxima=" + capacidadMaxima + ", cantidadActual=" + cantidadActual + '}';
+    }
+
 
     
-    public static void main(String[] args) {
-        CafeteraService cs=new CafeteraService();
-        cs.crearCafetera();
-        cs.llenarCafetera();
-        cs.servirTaza();
-        cs.agregarCafe();
-        System.out.println(cs.toString());
-    }
     
 }

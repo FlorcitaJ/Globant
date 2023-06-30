@@ -8,7 +8,11 @@ numero de páginas.
 package Servicio;
 
 import Entidad.Libro;
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class LibroService {
@@ -35,6 +39,17 @@ public class LibroService {
         System.out.println(l1.getIsbn());
         System.out.println(l1.getTitulo());
         System.out.println(l1.getAutor());
-        System.out.println(l1.getNumeroDePaginas());
+        System.out.println(l1.getNumeroDePaginas()+"Hola");
+    }
+    public void cls() {
+        try {
+            Robot pressbot = new Robot();
+            pressbot.keyPress(17); // Holds CTRL key.
+            pressbot.keyPress(76); // Holds L key.
+            pressbot.keyRelease(17); // Releases CTRL key.
+            pressbot.keyRelease(76); // Releases L key.
+        } catch (AWTException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

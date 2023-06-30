@@ -20,8 +20,10 @@ public class Ej1 {
         //creamos un objeto tipo Libro y usamos el metodo crear libro de la clase servicio
         Libro l1=ls.crearLibro();
         System.out.println("------------------------------");
+       // ls.cls();
         //llamamos al metodo mostrar libro y le pasamos por parametro el objeto libro
-        ls.mostrarLibro(l1);
+        ls.mostrarLibro(l1);           
+           
     }
     
 }
