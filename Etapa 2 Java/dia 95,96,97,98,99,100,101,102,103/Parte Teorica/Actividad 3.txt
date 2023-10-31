@@ -1,0 +1,4 @@
+1-verdadero, ya que la clave foranea de una tabla es la clave primaria de otra
+2-verdadero, generalmente estan representadas por una tercer tabla denominada tabla asociativa, la cual esta compuesta por las llaves primarias de las otras tablas
+3-falso, la llave dorada es la clave primaria, la llave foranea se representa con un rombo bordo
+4-falso, son 3, uno a uno, uno a muchos y muchos a muchos

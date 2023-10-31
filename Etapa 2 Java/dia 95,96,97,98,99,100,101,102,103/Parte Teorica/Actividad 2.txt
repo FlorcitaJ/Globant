@@ -1,0 +1,14 @@
+1- 
+  a-tabla casa: id_casa
+    tabla usuario: id_usuario
+  b-id_casa de la tabla usuario
+  c-tabla casa: calle
+    tabla usuario:n nombre y apellido
+  d-tabla casa: id_casa, calle,numeracion y
+    es_departamento
+    tabla usuario:id_usuario,nombre,apellido y 
+    id_casa
+  e-tabla casa: 163748,avenida el libertador,1465,1
+    tabla usuario: 854267,Noelia,devito,163748
+2- check
+3- d

@@ -12,11 +12,41 @@ importe en efectivo a pagar por dicho socio.
  */
 package ej5e;
 
+import java.util.Scanner;
+
 
 public class Ej5E {
 
    
     public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        double precioFinal=0;
+        boolean band=true;
+        System.out.println("Ingrese el monto del tratamiento para calcular su costo final");
+        double precio=leer.nextDouble();
+        System.out.println("Ingrese su tipo de socio (A,B o C)");
+        char letraSocio=leer.next().charAt(0);
+        letraSocio=Character.toUpperCase(letraSocio);
+        do {
+            switch (letraSocio) {
+                case 'A':
+                    precioFinal = precio - precio * 0.5;
+                    band=false;
+                    break;
+                case 'B':
+                    precioFinal = precio - precio * 0.35;
+                    band=false;
+                    break;
+                case 'C':
+                    precioFinal = precio;
+                    band=false;
+                    break;
+                default:
+                    System.out.println("Ese tipo de socio no se encuentra en el sistema, por favor ingrese otro válido");
+                    letraSocio = Character.toUpperCase(leer.next().charAt(0));
+            }
+        } while (band);
+        System.out.println("El monto a abonar por el tratamiento será de $"+precioFinal+" ya que usted es un socio de la categoría "+letraSocio);
         
     }
     
