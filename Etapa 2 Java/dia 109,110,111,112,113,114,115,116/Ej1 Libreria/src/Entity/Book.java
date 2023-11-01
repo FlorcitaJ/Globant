@@ -28,9 +28,9 @@ public class Book implements Serializable {
     private Integer year;
     @Column(name="Ejemplares")
     private Integer copies;
-    @Column(name="Ejemplares Prestados")
+    @Column(name="Ejemplares_Prestados")
     private Integer borrowedCopies;
-    @Column(name="Ejemplares restantes")
+    @Column(name="Ejemplares_Restantes")
     private Integer remainingCopies;
     @Column(name="Alta")
     private boolean discharge;
